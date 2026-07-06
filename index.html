@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta charset="UTF-8">
+<meta charset="UTF-8">
+<title>7天日本旅行攻略（高级版）</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(120deg, #ff416c, #ff4b2b);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* 卡片 */
+.card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #fff0f3;
+    cursor: pointer;
+}
+
+.card-content {
+    padding: 15px;
+    display: none;
+}
+
+/* 按钮 */
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: 8px;
+    background: #ff416c;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background: #e6385c;
+}
+
+/* 预算区 */
+.budget {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+input {
+    padding: 8px;
+    margin: 5px;
+    width: 120px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #222;
+    color: #aaa;
+    margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🇯🇵 7天日本旅行高级攻略</h1>
+    <p>东京 · 箱根 · 京都 · 大阪（含预算 & 地图）</p >
+</header>
+
+<div class="container">
+
+<!-- DAY -->
+<div class="card">
+    <div class="card-header">第1天：抵达东京 ✈️</div>
+    <div class="card-content">
+        <p>酒店：新宿 / 涩谷</p >
+        <a class="btn" target="_blank" href=" ">查看地图</a >
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">第2天：东京市区 🏙️</div>
+    <div class="card-content">
+        <p>涩谷 · 原宿 · 明治神宫</p >
+        <a class="btn" target="_blank" href="https://www.google.com/maps/search/Shibuya+Tokyo">涩谷地图</a >
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">第3天：东京深度 🎌</div>
+    <div class="card-content">
+        <p>浅草寺 · 秋叶原 · 晴空塔</p >
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">第4天：箱根温泉 ♨️</div>
+    <div class="card-content">
+        <p>富士山 · 芦之湖 · 温泉酒店</p >
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">第5天：京都古都 🏯</div>
+    <div class="card-content">
+        <p>清水寺 · 伏见稻荷 · 祇园</p >
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">第6天：大阪美食 🍜</div>
+    <div class="card-content">
+        <p>道顿堀 · 大阪城 · 心斋桥</p >
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">第7天：返程 ✈️</div>
+    <div class="card-content">
+        <p>自由活动 + 机场</p >
+    </div>
+</div>
+
+<!-- 预算 -->
+<div class="budget">
+    <h2>💰 旅行预算计算器</h2>
+
+    <p>输入天数 & 每天花费：</p >
+
+    <input id="days" placeholder="天数" />
+    <input id="cost" placeholder="每天花费(¥)" />
+    <button onclick="calc()">计算</button>
+
+    <h3 id="result"></h3>
+</div>
+
+</div>
+
+<footer>
+© 2026 Japan Travel Pro
+</footer>
+
+<script>
+// 折叠功能
+document.querySelectorAll(".card-header").forEach(el => {
+    el.addEventListener("click", () => {
+        let c = el.nextElementSibling;
+        c.style.display = (c.style.display === "block") ? "none" : "block";
+    });
+});
+
+// 预算计算
+function calc() {
+    let d = document.getElementById("days").value;
+    let c = document.getElementById("cost").value;
+
+    let total = Number(d) * Number(c);
+
+    document.getElementById("result").innerText =
+        "总预算：¥" + total;
+}
+</script>
+
+</body>
+</html>
